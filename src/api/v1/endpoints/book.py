@@ -6,12 +6,6 @@ from src.db.models import Book
 from src.services import book_service
 router=APIRouter()
 SessionDep = Annotated[Session, Depends(get_session)]
-id=0
-def get_id():
-    """Generate a unique ID for each book."""
-    global id
-    id += 1     
-    return id
 
 #Read All Books
 @router.get("/")
